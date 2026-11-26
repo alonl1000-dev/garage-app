@@ -1,5 +1,5 @@
 // Offline cache: the app shell and catalog are served from cache, refreshed in the background.
-const CACHE = 'garage-v2';
+const CACHE = 'garage-v3';
 const FILES = ['./', 'index.html', 'styles.css', 'app.js', 'engine.js', 'services.js', 'manifest.json', 'icon.svg', 'cloud.js', 'config.js',
   'data/kits.json', 'data/models.json', 'data/jobs.json'];
 self.addEventListener('install', (e) => e.waitUntil(caches.open(CACHE).then((c) => c.addAll(FILES))));

@@ -40,6 +40,11 @@ export async function signIn(email, password) {
   const { error } = await sb.auth.signInWithPassword({ email, password });
   if (error) throw new Error(error.message);
 }
+export async function signInWithGoogle() {
+  const redirectTo = location.origin + location.pathname;
+  const { error } = await sb.auth.signInWithOAuth({ provider: 'google', options: { redirectTo } });
+  if (error) throw new Error(error.message);
+}
 export async function signOut() { await sb.auth.signOut(); }
 export async function myProfile() {
   const s = await session();

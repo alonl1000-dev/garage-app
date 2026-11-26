@@ -146,8 +146,15 @@ function login(msg) {
       <label class="field"><span>אימייל</span><input class="input text ltr" id="em" type="email" autocomplete="username" required></label>
       <label class="field"><span>סיסמה</span><input class="input text ltr" id="pw" type="password" autocomplete="current-password" required></label>
       <div class="note" id="lerr" ${msg ? '' : 'hidden'}>${esc(msg ?? '')}</div>
-    </form>`);
+    </form>
+    <p class="sub" style="text-align:center;margin:16px 0 8px">או</p>
+    <button class="btn" id="lgg" type="button" style="width:100%">כניסה עם Google</button>`);
   setBar(`<button class="btn primary" id="lgo" type="submit" form="lf">כניסה</button>`);
+  $('#lgg').onclick = async () => {
+    $('#lgg').disabled = true;
+    try { await cloud.signInWithGoogle(); }
+    catch { $('#lerr').hidden = false; $('#lerr').textContent = 'הכניסה עם Google לא הצליחה. נסה שוב.'; $('#lgg').disabled = false; }
+  };
   $('#lf').onsubmit = async (e) => {
     e.preventDefault();
     $('#lgo').disabled = true;
