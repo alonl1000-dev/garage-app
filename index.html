@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#14213d">
+  <title>קבלת רכבים</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <button class="icon-btn" id="back" aria-label="חזרה" hidden>→</button>
+    <h1 id="title">קבלת רכבים</h1>
+    <span class="pill" id="pc-status" title="מצב המחשב במוסך">מחשב: עוד לא מחובר</span>
+  </header>
+  <div class="steps" id="steps" hidden></div>
+  <main id="view"></main>
+  <footer class="bar" id="bar"></footer>
+  <script src="config.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
