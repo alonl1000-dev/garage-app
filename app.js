@@ -148,7 +148,7 @@ function login(msg) {
       <div class="note" id="lerr" ${msg ? '' : 'hidden'}>${esc(msg ?? '')}</div>
     </form>
     <p class="sub" style="text-align:center;margin:16px 0 8px">או</p>
-    <button class="btn" id="lgg" type="button" style="width:100%">כניסה עם Google</button>`);
+    <button class="btn ghost" id="lgg" type="button" style="width:100%">כניסה עם Google</button>`);
   setBar(`<button class="btn primary" id="lgo" type="submit" form="lf">כניסה</button>`);
   $('#lgg').onclick = async () => {
     $('#lgg').disabled = true;
